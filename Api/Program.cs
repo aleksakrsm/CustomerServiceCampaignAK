@@ -1,5 +1,5 @@
+using Application;
 using Application.Behaviors;
-using Application.Features.Base;
 using Application.Features.Campaigns.Commands.CreateCampaign;
 using FluentValidation;
 using MediatR;
@@ -21,7 +21,10 @@ builder.Services.AddControllers();
 
 builder.Services.AddPersistence();
 
+builder.Services.AddApplication();
+
 builder.Services.AddInfrastructure();
+
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

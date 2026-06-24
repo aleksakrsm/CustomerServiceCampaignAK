@@ -1,6 +1,7 @@
 ﻿using Application.Features.Campaigns.Commands.CreateCampaign;
 using Application.Features.Campaigns.Commands.CreateReward;
 using Application.Features.Campaigns.Commands.DeleteReward;
+using Application.Features.Campaigns.Queries.GetRewardById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -47,6 +48,18 @@ namespace Api.Controllers
             if (result.IsSuccess)
             {
                 return NoContent();
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet("{id:guid}/rewards/{rewardId:guid}")]
+        public async Task<ActionResult> GetReward(Guid id, Guid rewardId, CancellationToken cancellationToken = default)
+        {
+            var command = new GetRewardByIdQuery(rewardId);
+            var result = await _mediator.Send(command, cancellationToken);
+            if (result.IsSuccess)
+            {
+                return Ok(result.Data);
             }
             return BadRequest(result.Message);
         }
