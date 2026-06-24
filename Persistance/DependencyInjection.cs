@@ -11,6 +11,7 @@ namespace Persistance
         public static IServiceCollection AddPersistence(this IServiceCollection services)
         {
             services.AddScoped<SoftDeleteInterceptor>();
+            services.AddScoped<TimestampAndStateInterceptor>();
 
             services.AddDbContext<MyDbContext>(
                     (serviceProvider, options) =>
@@ -23,6 +24,7 @@ namespace Persistance
                                 sqlOptions.MigrationsHistoryTable("__EFMigrationsHistory", "dbo");
                             });
 
+                        options.AddInterceptors(serviceProvider.GetRequiredService<TimestampAndStateInterceptor>());
                         options.AddInterceptors(serviceProvider.GetRequiredService<SoftDeleteInterceptor>());
                     });
 

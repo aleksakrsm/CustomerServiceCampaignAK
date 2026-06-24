@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Application.Abstractions.Services.Models.CustomerService;
 
 namespace Application.Abstractions.Services
 {
     public interface ICustomerService
     {
-        Task<string> GetCustomerByIdAsync(
+        Task<CustomerDto?> GetCustomerByIdAsync(
             long customerId,
             CancellationToken cancellationToken = default);
     }

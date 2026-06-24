@@ -15,6 +15,10 @@ namespace Persistance
         }
         public DbSet<Reward> Rewards { get; set; } = null!;
         public DbSet<Campaign> Campaigns { get; set; } = null!;
+
+        // for debugging purposes
+        //ChangeTracker IDbContext.ChangeTracker { get => ChangeTracker; set => throw new NotImplementedException(); }
+
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
             configurationBuilder.Properties<DailyRewardLimit>().HaveConversion<DailyRewardLimitConverter>();

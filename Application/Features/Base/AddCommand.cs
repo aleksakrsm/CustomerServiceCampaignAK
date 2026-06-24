@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Application.Features.Base
+﻿namespace Application.Features.Base
 {
     public abstract record AddCommand : Command<Guid>
     {
