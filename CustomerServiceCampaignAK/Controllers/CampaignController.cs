@@ -1,5 +1,6 @@
 ﻿using Application.Features.Campaigns.Commands.CreateCampaign;
 using Application.Features.Campaigns.Commands.CreateReward;
+using Application.Features.Campaigns.Commands.DeleteReward;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,6 +32,18 @@ namespace CustomerServiceCampaignAK.Controllers
         {
             var commandWithId = command with { Id = id };
             var result = await _mediator.Send(commandWithId, cancellationToken);
+            if (result.IsSuccess)
+            {
+                return NoContent();
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpDelete("{id:guid}/rewards/{rewardId:guid}")]
+        public async Task<ActionResult> DeleteReward(Guid id, Guid rewardId, CancellationToken cancellationToken = default)
+        {
+            var command = new DeleteRewardCommand(rewardId, id);
+            var result = await _mediator.Send(command, cancellationToken);
             if (result.IsSuccess)
             {
                 return NoContent();

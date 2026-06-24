@@ -1,9 +1,7 @@
 ﻿using Application.Abstractions.Persistence;
 using Application.Abstractions.Services;
 using Application.Features.Base;
-using Domain.Base;
 using Domain.Entities;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Campaigns.Commands.CreateReward
