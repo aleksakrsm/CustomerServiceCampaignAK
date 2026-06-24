@@ -1,9 +1,9 @@
-﻿using Application.Abstractions.Excaptions;
+﻿using Application.Exceptions;
 using Application.Features.Base;
 using Domain.Exceptions;
 using MediatR;
 
-namespace Application.Behaviours
+namespace Application.Behaviors
 {
     public class ExceptionHandlingBehavior<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>

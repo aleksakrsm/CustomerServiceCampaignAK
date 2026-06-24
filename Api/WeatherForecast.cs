@@ -1,4 +1,4 @@
-namespace CustomerServiceCampaignAK
+namespace Api
 {
     public class WeatherForecast
     {

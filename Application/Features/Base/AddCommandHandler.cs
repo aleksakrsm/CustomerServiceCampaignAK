@@ -1,5 +1,5 @@
-﻿using Application.Abstractions.Excaptions;
-using Application.Abstractions.Persistence;
+﻿using Application.Abstractions.Persistence;
+using Application.Exceptions;
 using Domain.Base;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

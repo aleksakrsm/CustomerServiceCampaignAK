@@ -4,7 +4,7 @@ using Application.Features.Campaigns.Commands.DeleteReward;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CustomerServiceCampaignAK.Controllers
+namespace Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

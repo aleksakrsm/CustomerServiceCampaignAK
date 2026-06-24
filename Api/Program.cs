@@ -1,4 +1,4 @@
-using Application.Behaviours;
+using Application.Behaviors;
 using Application.Features.Base;
 using Application.Features.Campaigns.Commands.CreateCampaign;
 using FluentValidation;
