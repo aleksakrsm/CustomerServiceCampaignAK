@@ -13,6 +13,7 @@ namespace Persistance
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
         }
+        public DbSet<User> Users { get; set; } = null!;
         public DbSet<Reward> Rewards { get; set; } = null!;
         public DbSet<Campaign> Campaigns { get; set; } = null!;
 
@@ -21,11 +22,12 @@ namespace Persistance
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
+            configurationBuilder.Properties<Email>().HaveConversion<EmailConverter>();
             configurationBuilder.Properties<DailyRewardLimit>().HaveConversion<DailyRewardLimitConverter>();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
 
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
