@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Base\" />
-    <Folder Include="Entities\" />
     <Folder Include="Guards\" />
     <Folder Include="Exceptions\" />
   </ItemGroup>

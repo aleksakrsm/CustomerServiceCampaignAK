@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace Application.Features.Auth.Commands
+namespace Application.Features.Auth.Commands.RequestOtp
 {
-    public class SignupCommandValidator : AbstractValidator<SignupCommand>
+    public class RequestOtpCommandValidator : AbstractValidator<RequestOtpCommand>
     {
-        public SignupCommandValidator()
+        public RequestOtpCommandValidator()
         {
             RuleFor(x => x.Email)
                 .NotEmpty().WithMessage("Email is required.")
