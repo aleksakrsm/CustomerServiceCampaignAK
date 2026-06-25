@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "5a374827-0100-45d9-bf49-21056c00aa9c",
+    "name": "CampaignCom",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "27135516"
+  },
+  "item": [
+    {
+      "name": "Weather",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Create Campaign",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Prva\",\r\n    \"dailyLimit\": -5,\r\n    \"startDate\": \"2026-06-24T00:00:00Z\",\r\n    \"endDate\": \"2026-07-01T23:59:59Z\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5116/campaign/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5116",
+          "path": [
+            "campaign",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Reward",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"agentId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"customerId\": 39,\r\n  \"description\": \"Fetching client profile from external SOAP service.\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5116/campaign/FECDA0DA-2468-47E5-B059-A71A4B12408B/rewards",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5116",
+          "path": [
+            "campaign",
+            "FECDA0DA-2468-47E5-B059-A71A4B12408B",
+            "rewards"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Reward",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Get Reward",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Signup",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Request Otp",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"aleksa.krsma@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5116/auth/request-otp",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5116",
+          "path": [
+            "auth",
+            "request-otp"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verify Otp",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"otp\": \"96208044\",\r\n    \"email\": \"aleksa.krsma@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5116/auth/verify-otp",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5116",
+          "path": [
+            "auth",
+            "verify-otp"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
