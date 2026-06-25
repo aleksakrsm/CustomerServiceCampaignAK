@@ -6,6 +6,7 @@ namespace Application.Abstractions.Persistence
     public interface IDbContext : IAsyncDisposable
     {
         DbSet<Reward> Rewards { get; }
+        DbSet<OtpCode> OtpCodes { get; }
         DbSet<User> Users { get; }
         DbSet<Campaign> Campaigns { get; }
         //ChangeTracker ChangeTracker { get; set; }// for debugging purposes

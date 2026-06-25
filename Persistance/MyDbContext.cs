@@ -14,6 +14,7 @@ namespace Persistance
         {
         }
         public DbSet<User> Users { get; set; } = null!;
+        public DbSet<OtpCode> OtpCodes { get; set; } = null!;
         public DbSet<Reward> Rewards { get; set; } = null!;
         public DbSet<Campaign> Campaigns { get; set; } = null!;
 

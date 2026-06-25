@@ -16,6 +16,10 @@ namespace Persistance
                 client.Timeout = TimeSpan.FromSeconds(15);
             });
 
+            services.AddScoped<IEmailService, EmailServiceSimulation>();
+
+            services.AddScoped<IJwtService, JwtService>();
+
             return services;
 
         }

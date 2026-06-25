@@ -3,7 +3,7 @@ using Application.Features.Base;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Features.Auth.Commands
+namespace Application.Features.Auth.Commands.SignupCommand
 {
     public record SignupCommand(string Email) : AddCommand
     {
