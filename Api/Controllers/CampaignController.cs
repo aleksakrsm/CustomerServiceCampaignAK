@@ -3,12 +3,14 @@ using Application.Features.Campaigns.Commands.CreateReward;
 using Application.Features.Campaigns.Commands.DeleteReward;
 using Application.Features.Campaigns.Queries.GetRewardById;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize(Roles = "Regular")]
     public class CampaignController : ControllerBase
     {
         private readonly IMediator _mediator;

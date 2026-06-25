@@ -2,12 +2,14 @@
 using Application.Features.Auth.Commands.SignupCommand;
 using Application.Features.Auth.Commands.VerifyOtp;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
 
     [ApiController]
+    [AllowAnonymous]
     [Route("[controller]")]
     public class AuthController : ControllerBase
     {

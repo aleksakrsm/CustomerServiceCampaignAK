@@ -40,6 +40,7 @@ namespace Infrastructure.Services
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
+                Issuer = jwtOptions.Value.Issuer,
                 Claims = claims,
                 Expires = expiresAt,
                 SigningCredentials = credentials
